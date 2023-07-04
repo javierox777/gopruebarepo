@@ -3,6 +3,7 @@ package main
 import (
 	modeluser "backend/model"
 	"context"
+	"fmt"
 
 	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/bson"
@@ -24,7 +25,7 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-
+		fmt.Println("hola mundo")
 		for result.Next(context.TODO()) {
 			var user modeluser.User
 			result.Decode(&user)
